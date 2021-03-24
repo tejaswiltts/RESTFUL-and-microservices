@@ -22,7 +22,7 @@ import com.ltts.DetailInfo.model.Team;
 		@RequestMapping("/detail")
 		public List<Team> getExternalTeam()
 		{
-			ResponseEntity<Team[]> response=rt.getForEntity("http://localhost:8089/teams", Team[].class);
+			ResponseEntity<Team[]> response=rt.getForEntity("http://team-service/teams", Team[].class);
 			Team[] teams=response.getBody();
 			List<Team> li=Arrays.asList(teams);
 			return li;
